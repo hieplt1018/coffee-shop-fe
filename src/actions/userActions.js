@@ -41,7 +41,8 @@ export const login = (email, password) => async(dispatch) => {
     const config = {
       headers: {
         'Content-Type': 'application/json'
-      }
+      },
+      withCredentials: true
     }
 
     const { data } = await axios.post('https://coffee-shop-api-xycm.onrender.com/api/v1/login', { email, password }, config);
