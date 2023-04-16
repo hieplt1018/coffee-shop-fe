@@ -39,11 +39,11 @@ export const login = (email, password) => async(dispatch) => {
     dispatch({ type: LOGIN_USER_REQUEST});
 
     const config = {
-      withCredentials:true,
       headers: {
-        'Content-Type': 'application/json'
-      }
-  }
+        "Content-Type": "application/json"
+      },
+      credentials: 'include'
+    }
 
     const { data } = await axios.post('https://coffee-shop-api-xycm.onrender.com/api/v1/login', { email, password }, config);
 
