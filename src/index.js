@@ -4,7 +4,7 @@ import App from './App';
 import { Provider } from 'react-redux'
 import store from './store';
 import { ToastContainer } from 'react-toastify';
-
+import axios from 'axios';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
@@ -13,6 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import 'mdbreact/dist/css/mdb.css';
 import './coffee-shop.css';
 
+axios.defaults.withCredentials = true
 const container = document.getElementById('root');
 const root = ReactDOMClient.createRoot(container);
 
