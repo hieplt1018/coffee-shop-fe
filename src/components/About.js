@@ -1,8 +1,16 @@
 import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
-
+import YouTube, { YouTubeProps } from 'react-youtube';
 
 const About = () => {
+  const opts: YouTubeProps['opts'] = {
+    height: '500px',
+    width: '100%',
+    playerVars: {
+      autoplay: 1,
+    },
+  };
+
   return (
     <Fragment>
       <div>
@@ -26,10 +34,8 @@ const About = () => {
         <section className="about spad">
           <div className="container">
             <div className="row">
-              <div className="col-lg-12">
-                <div className="about__video ">
-                  <Link to="https://www.youtube.com/watch?v=s4PpNlO_ZCs" className="play-btn video-popup"><i className="fa fa-play"></i></Link>
-                </div>
+              <div className="col-lg-12 mb-5">
+                <YouTube videoId="s4PpNlO_ZCs" opts={opts} style={{marginBottom: '90px'}}/>
               </div>
             </div>
             <div className="row">
@@ -41,6 +47,7 @@ const About = () => {
                   </div>
                   <p> &ldquo;<b><i>Cantata Coffee</i></b>&rdquo; được lấy cảm hứng từ Coffee Cantata - BWV211 của nhà soạn nhạc vĩ đại Johann Sebastian Bach. Chúng tôi tin vào tình yêu, tuổi trẻ, sự nhiệt huyết và các chuẩn mực. Bởi qua thời gian, mọi thứ sẽ biến mất, chỉ có những giá trị thực mới trường tồn cùng thời gian. Giống âm nhạc của J.Bach vậy.</p>
                 </div>
+                <div className='about__video'></div>
               </div>
           
             </div>
